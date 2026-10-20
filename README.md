@@ -100,7 +100,7 @@ No single directory exceeds 1,000 files, ensuring fast loading in the GitHub web
 ## Dedicated Database Copy with CDN URLs
 
 A ready-to-use transformed database has been generated:
-- File: `The_Central_Question_Database/chorcha_questions_cdn.db`
+- File: `The_Central_Question_Database/questions_cdn.db`
 - Every `question_html`, `option_a/b/c/d`, `solution_html`, and `image_urls` column has been automatically replaced to use the CDN URL:
   `https://cdn.statically.io/gh/lunarcomet39/The_Central_Question_Images/main/images/...`
 - Total questions transformed: **10,851 questions with images**.
@@ -109,12 +109,12 @@ A ready-to-use transformed database has been generated:
 
 ## Manifest Mapping
 
-The complete machine-readable mapping from original asset URLs to their canonical CDN paths is stored in [`image_manifest.json`](image_manifest.json):
+The complete machine-readable mapping from asset URLs to their canonical CDN paths is stored in [`image_manifest.json`](image_manifest.json):
 
 ```json
 {
-  "https://assets.chorcha.net/A5K5u6qQYNNKl2QYb-Ny_.png": {
-    "clean_url": "https://assets.chorcha.net/A5K5u6qQYNNKl2QYb-Ny_.png",
+  "https://assets.example.com/A5K5u6qQYNNKl2QYb-Ny_.png": {
+    "clean_url": "https://assets.example.com/A5K5u6qQYNNKl2QYb-Ny_.png",
     "filename": "A5K5u6qQYNNKl2QYb-Ny_.png",
     "subject": "physics",
     "year": "undated",
