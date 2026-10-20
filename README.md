@@ -1,72 +1,56 @@
 # The Central Question Images
 
-[![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange.svg)](https://www.jsdelivr.com/)
+[![CDN](https://img.shields.io/badge/CDN-Cloudflare%20%7C%20Statically-orange.svg)](https://statically.io/)
+[![GitHub](https://img.shields.io/badge/raw-GitHub%20Fastly-blue.svg)](https://raw.githubusercontent.com/)
 [![Images](https://img.shields.io/badge/images-16%2C631%2B-blue.svg)]()
 [![License](https://img.shields.io/badge/license-CC%20BY--SA%204.0-green.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-live%20production-brightgreen.svg)]()
 
 > A dedicated, high-speed, global CDN asset repository for 16,631+ diagrams, chemical structures, circuit schematics, vector diagrams, and mathematical figures used across HSC Board & College test papers and admission questions.
 
-Hosted on GitHub and accelerated globally across 750+ points of presence via **jsDelivr CDN**.
+Hosted publicly on GitHub and accelerated worldwide via **Cloudflare Edge CDN (Statically)** and **GitHub / Fastly Raw CDN**.
 
 ---
 
-## How to Hotlink Images via jsDelivr CDN
+## Public Repository URL
 
-Every image in this repository is accessible worldwide with zero egress bandwidth costs and sub-50ms latency using jsDelivr's global multi-CDN network.
-
-### Standard URL Format
-
-```html
-https://cdn.jsdelivr.net/gh/lunarcomet39/The_Central_Question_Images@main/images/{subject}/{year}/{filename}
-```
-
-### Live Examples by Subject
-
-- **Physics (2026 Board Test Paper)**:
-  ```html
-  <img src="https://cdn.jsdelivr.net/gh/lunarcomet39/The_Central_Question_Images@main/images/physics/2026/A5K5u6qQYNNKl2QYb-Ny_.png" alt="Physics Diagram" />
-  ```
-
-- **Chemistry (2025 Test Paper)**:
-  ```html
-  <img src="https://cdn.jsdelivr.net/gh/lunarcomet39/The_Central_Question_Images@main/images/chemistry/2025/x1aAx5lLdV_qbd0gy2Kx7.png" alt="Chemical Structure" />
-  ```
-
-- **Biology (2024 Test Paper)**:
-  ```html
-  <img src="https://cdn.jsdelivr.net/gh/lunarcomet39/The_Central_Question_Images@main/images/biology/2024/7nvbhGoNy7uYplRVIEah9.png" alt="Biological Specimen" />
-  ```
-
-- **Higher Math (2023 Test Paper)**:
-  ```html
-  <img src="https://cdn.jsdelivr.net/gh/lunarcomet39/The_Central_Question_Images@main/images/higher_math/2023/zIaLZkV61yQV4Gtye_rMv.png" alt="Math Graph" />
-  ```
-
-- **ICT (Information & Communication Technology)**:
-  ```html
-  <img src="https://cdn.jsdelivr.net/gh/lunarcomet39/The_Central_Question_Images@main/images/ict/2023/nQrynwoy1X.png" alt="Logic Gate Schematic" />
-  ```
+- **GitHub Repository**: `https://github.com/lunarcomet39/The_Central_Question_Images`
+- **Visibility**: Public (free global edge delivery)
 
 ---
 
-## Version Pinning & Cache Control
+## How to Hotlink Images on Your Website
 
-For immutable caching and protection against upstream branch changes, pin the version tag:
+Every image is immediately accessible via two high-speed CDN options with zero egress fees and sub-50ms latency:
+
+### Option 1: Statically Multi-CDN (Cloudflare Accelerated — Recommended)
+
+Accelerated by Cloudflare edge caches globally. Supports automatic WebP conversion and caching with no repository size constraints:
 
 ```html
-<!-- Tagged Release (Recommended for production websites) -->
-https://cdn.jsdelivr.net/gh/lunarcomet39/The_Central_Question_Images@v1.0.0/images/physics/2026/example.png
+<!-- Format -->
+https://cdn.statically.io/gh/lunarcomet39/The_Central_Question_Images/main/images/{subject}/{year}/{filename}
 
-<!-- Main Branch (Always latest commit) -->
-https://cdn.jsdelivr.net/gh/lunarcomet39/The_Central_Question_Images@main/images/physics/2026/example.png
+<!-- Live Example: Physics Circuit Diagram (2025 Test Paper) -->
+<img src="https://cdn.statically.io/gh/lunarcomet39/The_Central_Question_Images/main/images/physics/2025/x1aAx5lLdV_qbd0gy2Kx7.png" alt="Circuit Schematic" />
+
+<!-- Live Example: Biology Botanical Specimen (2024 Test Paper) -->
+<img src="https://cdn.statically.io/gh/lunarcomet39/The_Central_Question_Images/main/images/physics/2024/7nvbhGoNy7uYplRVIEah9.png" alt="Botanical Specimen" />
+
+<!-- Live Example: Bangla Passage Diagram (2026 Test Paper) -->
+<img src="https://cdn.statically.io/gh/lunarcomet39/The_Central_Question_Images/main/images/bangla/2026/5gBAVNubCU49lISbBSji6.png" alt="Bangla Diagram" />
 ```
 
-### Instant Cache Invalidation (Purge API)
+### Option 2: Native GitHub Raw CDN (Fastly Edge)
 
-If an image is updated, force-purge the jsDelivr edge cache by prefixing with `purge.jsdelivr.net`:
-```bash
-curl https://purge.jsdelivr.net/gh/lunarcomet39/The_Central_Question_Images@main/images/physics/2026/example.png
+Directly served by GitHub's Fastly CDN edge nodes:
+
+```html
+<!-- Format -->
+https://raw.githubusercontent.com/lunarcomet39/The_Central_Question_Images/main/images/{subject}/{year}/{filename}
+
+<!-- Live Example -->
+<img src="https://raw.githubusercontent.com/lunarcomet39/The_Central_Question_Images/main/images/physics/2025/x1aAx5lLdV_qbd0gy2Kx7.png" alt="Question Diagram" />
 ```
 
 ---
@@ -109,7 +93,17 @@ No single directory exceeds 1,000 files, ensuring fast loading in the GitHub web
 | **ICT** | 1,796 | Logic gates, truth tables, flowcharts, network topology diagrams |
 | **English** | 220 | Reading comprehension illustrations, table extracts |
 | **Bangla** | 20 | Passage figures |
-| **Total** | **16,631** | **~1.32 GB optimized Web Assets** |
+| **Total** | **16,631** | **~1.32 GB Web Assets** |
+
+---
+
+## Dedicated Database Copy with CDN URLs
+
+A ready-to-use transformed database has been generated:
+- File: `The_Central_Question_Database/chorcha_questions_cdn.db`
+- Every `question_html`, `option_a/b/c/d`, `solution_html`, and `image_urls` column has been automatically replaced to use the CDN URL:
+  `https://cdn.statically.io/gh/lunarcomet39/The_Central_Question_Images/main/images/...`
+- Total questions transformed: **10,851 questions with images**.
 
 ---
 
@@ -123,9 +117,9 @@ The complete machine-readable mapping from original asset URLs to their canonica
     "clean_url": "https://assets.chorcha.net/A5K5u6qQYNNKl2QYb-Ny_.png",
     "filename": "A5K5u6qQYNNKl2QYb-Ny_.png",
     "subject": "physics",
-    "year": "2026",
-    "rel_path": "images/physics/2026/A5K5u6qQYNNKl2QYb-Ny_.png",
-    "cdn_url": "https://cdn.jsdelivr.net/gh/lunarcomet39/The_Central_Question_Images@main/images/physics/2026/A5K5u6qQYNNKl2QYb-Ny_.png"
+    "year": "undated",
+    "rel_path": "images/physics/undated/A5K5u6qQYNNKl2QYb-Ny_.png",
+    "cdn_url": "https://cdn.statically.io/gh/lunarcomet39/The_Central_Question_Images/main/images/physics/undated/A5K5u6qQYNNKl2QYb-Ny_.png"
   }
 }
 ```
