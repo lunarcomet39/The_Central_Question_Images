@@ -1,0 +1,17 @@
+# Environment & credentials
+.env
+*.env
+!.env.example
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+venv/
+
+# Temp & logs
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
